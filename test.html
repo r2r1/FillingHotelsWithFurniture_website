@@ -1,0 +1,100 @@
+<html lang="en" class="webmadewell"><head>
+    <meta charset="UTF-8">
+    
+
+      <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+  
+      <meta name="apple-mobile-web-app-title" content="CodePen">
+      <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+      <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111">
+      <title>ТЕСТ</title>
+      <link rel="stylesheet" href="style.css">
+    
+
+    
+  </head>
+  
+  <body translate="no">
+    <div class="sample-header" style="height: 860px; ">
+    <div class="sample-header-section">
+        <h1 >${category}</h1>
+        
+    </div>
+    
+ </div>
+  <div class="sample-section-wrap">
+    <div class="sample-section" style="margin-top: 260px;">
+        
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium
+            quis, sem. Nulla consequat massa quis enim. </p>
+      
+          <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean
+            vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam
+            ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. </p>
+            
+    </div>
+    <section class="section-padding"  >
+            <div class="row" style="display: flex;
+                 justify-content:center ; flex-direction:row;flex-wrap:wrap">
+
+                  <div class="card" > 
+                     <a href="Pages/soft/softPage.html">
+                     <img src="public/Bed.jpeg" alt="Avatar" style="width:100%; height: 300px; border-radius: 50px; ">
+                     <div class="container3" >
+                       <h4 style="font-size: 30px; margin-top: 5; ">Мягкое</h4> 
+                       <h2>Отличная кровать, на которой отлично спать</h2>
+                     </div>
+                   </a>
+                   </div> 
+                   <div class="card" > 
+                    <a href="Pages/beautifulPage/beautiful.html">
+                    <img src="public/miror.jpg" alt="Avatar" style="width:100%;  height: 300px;border-radius: 50px; ">
+                    <div class="container3" >
+                      <h4 style="font-size: 30px; ">Красивое</h4> 
+                    </div>
+                  </a>
+                  </div>  
+                  <div class="card" > 
+                    <a href="Pages/solid/solid.html">
+                    <img src="public\shkaf.webp" alt="Avatar" style="width:100%; height: 300px;  border-radius: 50px; ">
+                    <div class="container3" >
+                      <h4 style="font-size: 30px;">Твёрдое</h4> 
+                    </div>
+                  </a>
+                  </div>                      
+           </div>
+     </section>
+
+  </div>
+  <div class="foot" >
+    <h1>ghbdtn</h1>
+
+  </div>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+  
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+        <script id="rendered-js">
+  function parallax_height() {
+    var scroll_top = $(this).scrollTop();
+    var sample_section_top = $(".sample-section").offset().top;
+    var header_height = $(".sample-header-section").outerHeight();
+    $(".sample-section").css({ "margin-top": header_height });
+    $(".sample-header").css({ height: header_height - scroll_top });
+  }
+  parallax_height();
+  $(window).scroll(function () {
+    parallax_height();
+  });
+  $(window).resize(function () {
+    parallax_height();
+  });
+  
+  //# sourceURL=pen.js
+      </script>
+    <script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRefreshCSS-44fe83e49b63affec96918c9af88c0d80b209a862cf87ac46bc933074b8c557d.js"></script>
+
+
+</body></html>

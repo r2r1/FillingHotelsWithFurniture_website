@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/navbar.css">
+<link rel="stylesheet" href="/productPage.css">
+
+
+
+</head>
+<body>
+
+<div class="header-soft">
+    
+   <h2 id = "objectName_ID" style=" text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); color:#ddd ">  </object></h2>
+   <p style=" text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); color:#ddd"> </p>
+</div>
+
+<div id="navbar">
+  <a href="/index.html"style="margin-left: 10px;"><p>ГЛАВНАЯ</p></a>
+  <a href="/Pages/beautifulPage/beautiful.html" style="float: right;margin-right: 20px"><p></p></a>
+  <a href="/Pages/solid/solid.html" style="float: right"><p>КОРПУСНАЯ МЕБЕЛЬ</p></a>
+  <p id="category_name" style="margin-left: 40%;" >- МЯГКАЯ МЕБЕЛЬ -</p>
+  
+
+</div>
+
+<section id= "section_padding" class="section-padding"  >
+    <div id = "cardsContainer" class="row" style="display: flex;
+         justify-content:center ; flex-direction:row;flex-wrap:wrap">  
+         <!-- ТУТ КАРТОЧКИ -->               
+   </div>
+
+</section>
+
+<script>
+window.onscroll = function() {myFunction()};
+
+const navbar = document.getElementById("navbar");
+const sticky = navbar.offsetTop;
+const section_padding =  document.getElementById("section_padding");
+
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky"); 
+    section_padding.classList.add('stop_padding')
+
+  } else {
+    navbar.classList.remove("sticky");
+    section_padding.classList.remove('stop_padding')
+  }
+}
+</script>
+
+<script type="module" type = "text/javascript">
+import myJson from './data.json' assert {type: 'json'};
+
+
+        const objectName_ID = document.getElementById("objectName_ID")
+
+        const last_page = document.referrer.split('/')
+        const path = window.location.pathname;
+        const page = path.split("/").pop();
+        const cardsContainer = document.getElementById("cardsContainer");
+        
+
+        if (((last_page[last_page.length-1] == "softPage.html") || (page == last_page[last_page.length-1])) ) {
+          objectName_ID.innerHTML = "Кровати"
+    
+          for (var i = 0; i < myJson.length; i++){
+            console.log(myJson[i].name)
+            var name = myJson[i].name;
+            var article = myJson[i].artikle
+            var price = myJson[i].price
+            var cardContent= `<div class="card" > <img src="/public/${article}.jpeg" alt="Avatar" style="width:100%; height: 300px; border-radius: 50px; "><div class="container3" ><h4 id ="productName" style="font-size: 30px; ">${name}</h4><p class= 'card_price'>Цена: ${price}₽</p><p class= 'card_article'>Артикул:${article}</p> </div>`;
+            cardsContainer.innerHTML += cardContent
+            console.log(myJson)
+             
+            } 
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/navbar.css">
+<link rel="stylesheet" href="/productPage.css">
+<link rel="stylesheet" href="/modal.css">
+
+
+
+
+
+</head>
+<body>
+  <script>function showModal(card) {
+    // Получаем данные о карточке из элемента card
+    var titleCard = card.querySelector('.productName').textContent;
+
+    console.log(titleCard);
+    modalTitle.innerHTML= titleCard;
+    modalSubtitle1.innerHTML=subtitle;
+
+  }</script>
+  
+<div class="header-soft">
+    
+   <h2 id = "objectName_ID" style=" text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); color:#ddd ">Кровати</object></h2>
+   <p style=" text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); color:#ddd"> </p>
+</div>
+
+<div id="navbar">
+  <a href="/index.html"style="margin-left: 10px;"><p>ГЛАВНАЯ</p></a>
+  <a href="/Pages/beautifulPage/beautiful.html" style="float: right;margin-right: 20px"><p>ДЕКОР</p></a>
+  <a href="/Pages/solid/solid.html" style="float: right"><p>КОРПУСНАЯ МЕБЕЛЬ</p></a>
+  
+  <a href="/Pages/soft/softPage.html" style="float: right"><p id="category_name" > МЯГКАЯ МЕБЕЛЬ </p></a>
+  <p id="category_name" style="margin-left: 44%; " >- КРОВАТИ -</p>
+  
+
+</div>
+
+<section id= "section_padding" class="section-padding"  >
+    <div id = "cardsContainer" class="row" style="display: flex;
+         justify-content:center ; flex-direction:row;flex-wrap:wrap">  
+         <!-- ТУТ КАРТОЧКИ -->               
+   </div>
+   <div class="modal ">
+    <div class="modal-content ">
+        <button class="close-button">×</button> 
+        <div class="container_modal  ">
+             
+            <div class="images">
+              <img class="modal_img" src="/public/111.jpeg" />
+            </div>
+            <div class="product">
+            <h3 id= "modalTitle" style="font-size: 25px;"></h3>
+            <hr width= "260" size="2" style="margin-top: -10px;"/>
+            <p id ="modalSubtitle" class="modal_subtitle"></p>
+            <p id ="modalColor" class="modal_color"></p>
+            <p id ="modalSize" class="modal_size"></p>
+            <p id ="modalStyle" class="modal_style"></p>
+            <p id ="modalArticle" class="modal_article"></p>
+            <p id= "modalPrice" class="modal_price"></p>
+            </div>
+          </div>
+        
+    </div>
+</div>
+
+</section>
+
+<script>
+window.onscroll = function() {myFunction()};
+
+const navbar = document.getElementById("navbar");
+const sticky = navbar.offsetTop;
+const section_padding =  document.getElementById("section_padding");
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky"); 
+    section_padding.classList.add('stop_padding')
+
+  } else {
+    navbar.classList.remove("sticky");
+     section_padding.classList.remove('stop_padding')
+  }
+}
+</script>
+
+<script type="module" type = "text/javascript">
+        import myJson from '/Pages/data.json' assert {type: 'json'};
+
+        const last_page = document.referrer.split('/')
+        const path = window.location.pathname;
+        const page = path.split("/").pop();
+
+        const cardsContainer = document.getElementById("cardsContainer");
+
+        const  modalTitle= document.getElementById("modalTitle");
+        const  modalPrice= document.getElementById("modalPrice");
+        const  modalSubtitle1 = document.getElementById("modalSubtitle");
+        const  modalArticle = document.getElementById("modalArticle");
+        const  modalStyle = document.getElementById("modalStyle");
+        const  modalColor = document.getElementById("modalColor");
+        const  modalSize = document.getElementById("modalSize");
+
+        if (((last_page[last_page.length-1] == "softPage.html") || (page == last_page[last_page.length-1])) ) {
+          
+
+          for (var i = 0; i < myJson.length; i++){
+            console.log(myJson[i])
+            var name = myJson[i].name;
+            var article = myJson[i].article
+            var price = myJson[i].price
+            const product_type = myJson[i].category_2
+            const product_style = myJson[i].style
+            const subtitle = myJson[i].subtitle
+            const color = myJson[i].color
+            const width = myJson[i].width
+            const length = myJson[i].length
+            const height = myJson[i].height
+            const photo = myJson[i].photo
+
+            
+           
+
+            var cardContent= `<div id=${i} class="id_go" onclick="showModal(this)">
+                                <div class="card trigger"> <img src="/public/${article}.jpeg" alt="Avatar" style="width:100%; height: 300px; border-radius: 50px; ">
+                                  <div class="container3">
+                                    <h4 id="productName" class = "productName" style="font-size: 30px; ">${product_type} ${name} </h4>
+                                    <p class='card_price'> ${price}₽</p>
+                                    <p class='card_article'>Артикул:${article}</p>
+                                  </div>
+                                </div>`
+
+            if (product_type == "Кровать") {
+                cardsContainer.innerHTML += cardContent;
+                
+                
+                }
+            } 
+            
+        }
+    
+
+        //MODAL WINDOW
+        var modal = document.querySelector(".modal");
+        var trigger = document.querySelector(".trigger");
+        var closeButton = document.querySelector(".close-button");
+
+
+        
+
+        function toggleModal() {
+            
+            modal.classList.toggle("show-modal");
+            
+        }
+        
+        function windowOnClick(event) {
+            if (event.target === modal) {
+                toggleModal();
+            }
+        }
+        
+        trigger.addEventListener("click", toggleModal);
+        closeButton.addEventListener("click", toggleModal);
+        window.addEventListener("click", windowOnClick);
+        </script>        
+        
+</body>
+</html>

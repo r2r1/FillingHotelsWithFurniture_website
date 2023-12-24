@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/navbar.css">
+<link rel="stylesheet" href="/page.css">
+
+
+
+</head>
+<body>
+
+<div class="header-soft">
+    
+    <h2 style=" text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); color:#ddd ">Мягкая мебель</h2>
+   <p style=" text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); color:#ddd">- кровати - диваны - кресла - </p>
+</div>
+
+<div id="navbar">
+  <a href="/index.html"style="margin-left: 10px;"><p>ГЛАВНАЯ</p></a>
+  <a href="/Pages/beautifulPage/beautiful.html" style="float: right;margin-right: 20px"><p>ДЕКОР</p></a>
+  <a href="/Pages/solid/solid.html" style="float: right"><p>КОРПУСНАЯ МЕБЕЛЬ</p></a>
+  <p id="category_name" style="margin-left: 40%;" >- МЯГКАЯ МЕБЕЛЬ -</p>
+  
+
+</div>
+
+<section id= "section_padding" class="section-padding"  >
+
+      
+    <div class="row" style="display: flex;
+         justify-content:center ; flex-direction:row;flex-wrap:wrap">
+
+          <div class="card" > 
+             <a href="bed.html">
+             <img src="/public/Bed.jpeg" alt="Avatar" style="width:100%; height: 300px; border-radius: 50px; ">
+             <div class="container3" >
+               <h4 style="font-size: 30px; ">Кровати</h4> 
+             </div>
+           </a>
+           </div> 
+           <div class="card" > 
+            <a href="sofa.html">
+            <img src="/public/miror.jpg" alt="Avatar" style="width:100%;  height: 300px;border-radius: 50px; ">
+            <div class="container3" >
+              <h4 style="font-size: 30px; ">Диваны</h4> 
+            </div>
+          </a>
+          </div>  
+          <div class="card" > 
+            <a href="pouf.html">
+            <img src="/public\shkaf.webp" alt="Avatar" style="width:100%; height: 300px;  border-radius: 50px; ">
+            <div class="container3" >
+              <h4 style="font-size: 30px;">Пуфы</h4> 
+            </div>
+          </a>
+          </div>
+          <div class="card" > 
+            <a href="chairs.html">
+            <img src="/public\shkaf.webp" alt="Avatar" style="width:100%; height: 300px;  border-radius: 50px; ">
+            <div class="container3" >
+              <h4 style="font-size: 30px;">Кресла</h4> 
+            </div>
+          </a>
+          </div>                        
+                           
+   </div>
+</section>
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+var section_padding =  document.getElementById("section_padding");
+
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky"); 
+    section_padding.classList.add('stop_padding')
+
+  } else {
+    navbar.classList.remove("sticky");
+    section_padding.classList.remove('stop_padding')
+  }
+}
+</script>
+
+</body>
+</html>
